@@ -12,7 +12,14 @@ const companies= [
   {name: "Company Nine", category: "Retail", start: 1981, end: 1989}
 ];
 
+
+
 const ages = [33, 12, 20, 16, 5, 54, 21, 44, 61, 13, 15, 45, 25, 64, 32];
+const names = ['David', 'Richard', 'Veronika'];
+
+const nameLength = names.map(name => name.length);
+
+console.log(nameLength);
 
 // for (let i = 0; i < companies.length; i++) {
 //   console.log(companies[i]);
@@ -144,3 +151,55 @@ const combined = ages
 console.log(combined);
 
 */
+
+/********************************************************************************************************/
+
+/* Using map()
+ *
+ * Using the musicData array and map():
+ *   - Return a string for each item in the array in the following format:
+ *     <album-name> by <artist> sold <sales> copies
+ *   - Store the returned data in a new albumSalesStrings variable
+ *
+ * Note:
+ *   - Do not delete the musicData variable
+ *   - Do not alter any of the musicData content
+ *   - Do not format the sales number; leave it as a long string of digits
+ */
+
+const musicData = [
+    { artist: 'Adele', name: '25', sales: 1731000 },
+    { artist: 'Drake', name: 'Views', sales: 1608000 },
+    { artist: 'Beyonce', name: 'Lemonade', sales: 1554000 },
+    { artist: 'Chris Stapleton', name: 'Traveller', sales: 1085000 },
+    { artist: 'Pentatonix', name: 'A Pentatonix Christmas', sales: 904000 },
+    { artist: 'Original Broadway Cast Recording', 
+      name: 'Hamilton: An American Musical', sales: 820000 },
+    { artist: 'Twenty One Pilots', name: 'Blurryface', sales: 738000 },
+    { artist: 'Prince', name: 'The Very Best of Prince', sales: 668000 },
+    { artist: 'Rihanna', name: 'Anti', sales: 603000 },
+    { artist: 'Justin Bieber', name: 'Purpose', sales: 554000 }
+];
+
+const albumSalesStrings = musicData.map(obj => `${obj.name} by ${obj.artist} sold ${obj.sales} copies`);
+
+console.log(albumSalesStrings);
+
+/* Using filter()
+ *
+ * Using the musicData array and filter():
+ *   - Return only album objects where the album's name is
+ *     10 characters long, 25 characters long, or anywhere in between
+ *   - Store the returned data in a new `results` variable
+ *
+ * Note:
+ *   - Do not delete the musicData variable
+ *   - Do not alter any of the musicData content
+ */
+
+const results = musicData.filter(album => (album.name.length >= 10 && album.name.length <= 25));
+console.log(results);
+
+((name) => {
+  console.log(`hi ${name}`);
+}('tamer'));
